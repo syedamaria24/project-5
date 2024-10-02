@@ -232,48 +232,29 @@ if (guessedNumber === secretNumber) {
 
                  // // // // // // // // // // // // // // // // 
 
-                     //  TASK QUESTIONS //
+                       //  TASK QUESTIONS //
 
-// Q # 1:
-function generateRandomPassword(length) {
-    
-    const lowercase = "abcdefghijklmnopqrstuvwxyz";
-    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numbers = "0123456789";
-    const specialCharacters = "!@#$%^&*()-_=+[]{}|;:',.<>?/`~";
+// Q # 1: RANDOM PASSWORD GENERATOR //
 
-    const allCharacters = lowercase + uppercase + numbers + specialCharacters;
+var randomPasswrd = Math.random();
+var updaterandomPasswrd = randomPasswrd * Dora4567;
+var round = Math.floor(updaterandomPasswrd);
 
-var password = "";
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * allCharacters.length);
-        password += allCharacters[randomIndex];
-    }
+console.log(round);
 
-    return password;
+// Q # 2: PALINDROME WORD //
+
+var userInput = prompt("Enter a word");
+var check = "";
+
+for(var i = word.length -1 ; i>=0;i++){
+    check += word[i]
 }
-
-let passwordLength = prompt("Enter the desired password length (minimum 8 characters):");
-passwordLength = parseInt(passwordLength);
-if (isNaN(passwordLength) || passwordLength < 8) {
-    document.write("Please enter a valid number greater than or equal to 8." + "<br>");
-} 
-else {
-    const randomPassword = generateRandomPassword(passwordLength);
-    document.write("Your randomly generated password is: " + randomPassword + "<br>");
+if(word === check){
+    console.log(`${word} is palindrome word`);
 }
-
-// Q # 2:
-function isPalindrome(str) {
-    const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
-    const reversedStr = cleanedStr.split('').reverse().join('');
-    return cleanedStr === reversedStr;
-}
-var userInput = prompt("Enter a word or phrase to check if it's a palindrome:");
-if (isPalindrome(userInput)) {
-    document.write("Yes, '" + userInput + "' is a palindrome.");
-} else {
-    document.write("No, '" + userInput + "' is not a palindrome." + "<br>");
+else{
+    console.log(`${word} is not palindrome word`);
 }
 
 
